@@ -1,0 +1,44 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Игра</title>
+</head>
+<body>
+    <div class="score-box">
+        <b id="score">Score: 0</b>
+        <p>Latest score: <span id="latest"></span></p>
+    </div>
+
+    <div class="game">
+        <div id="dino"></div>
+        <div id="cactus" class="move"></div>
+        <div id="cube" class="move1"></div>
+        
+    </div>
+
+    <div class="note">Press <span class="space">&nbsp;space&nbsp;</span> to прыжок or <span class="down-arrow">&nbsp;S &nbsp;</span> to duck</div>
+
+    <div class="container">
+        <button id="buttonS">Стрелять</button>
+        <button id="btn">Стоп</button>
+    </div>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/script.js"></script>
+</body>
+</html>

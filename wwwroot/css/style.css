@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.score-box {
+    margin: 20px auto 0;
+    padding-top: 30px;
+    width: 600px;
+    height: 100px;
+    text-align: center;
+}
+
+b {
+    font-size: 32px;
+}
+
+.game {
+    width: 800px;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url("/img/dino.png");
+    background-size: 50px 50px;
+    position: relative;
+    top: 150px;
+    transition: height 0.2s; /* Плавный переход для высоты */
+}
+
+#cactus {
+    width: 20px;
+    height: 40px;
+    background-image: url("/img/cactus.png");
+    background-size: 20px 40px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+}
+
+
+
+#buttonS {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.move {
+    animation: cactusMov 2s infinite linear;
+}
+
+#cube {
+    width: 20px;
+    height: 40px;
+    background-image: url("/img/letnys.png");
+    background-size: 20px 40px;
+    position: relative;
+    top: 10px;
+    left: 580px;
+}
+
+.move1 {
+    animation: cubeMov 2s infinite linear;
+}
+
+@keyframes cubeMov {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -20px;
+    }
+}
+
+@keyframes cactusMov {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -20px;
+    }
+}
+
+.jump {
+    animation: jump .5s linear;
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    25% {
+        top: 120px;
+    }
+
+    50% {
+        top: 90px;
+    }
+
+    75% {
+        top: 120px;
+    }
+
+    100% {
+        top: 150px;
+    }
+}
+
+.duck {
+    height: 25px; /* Уменьшаем высоту динозавра при пригибании */
+    transition: height 0.2s; /* Плавный переход */
+}
+
+.note {
+    margin: 20px auto 0;
+    padding-top: 30px;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.space {
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#btn {
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    outline: none;
+}
+
+.bullet {
+    position: absolute;
+    width: 10px; /* Ширина пули */
+    height: 5px; /* Высота пули */
+    background-color: red; /* Цвет пули */
+    border-radius: 5px; /* Закругленные края для более реалистичной формы пули */
+    z-index: 10; /* Убедитесь, что пуля появляется над другими элементами */
+    transition: left 0.1s linear; /* Плавный переход для движения */
+}
